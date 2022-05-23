@@ -9,20 +9,65 @@
 </head>
 <body onload="carregar()">
     <header>
-        <h1>Hora do dia!</h1>
+        <h1>Exercicios do curso de JS (curso em vídeo)</h1>
     </header>
-    <section>
-        <div id="msg">
-            Aqui vai aparecer a mensagem 
-        </div>
-        <div>
-            <img src="images/noite.png"  id="imagem"  alt="foto do dia" srcset="">
-        </div>
-    </section>
+    <div id="exercicio1" class="exercicio" >
+        <section>
+            <h3>Exercicio 1!</h3>
+            <p>
+                Exercicio que capta o horário atual do sistema e atualiza a foto e a cor de fundo de acordo com o horario.
+            </p>
+        </section>
+        <section>
+            
+            <div >
+                <h3>Hora do dia!</h3>
+                <p id="msg"> vai aparecer a mensagem </p>
+            </div>
+            <div>
+                <img src="images/exercicio1/noite.png"  id="imagem"  alt="foto do dia" srcset="">
+            </div>
+        </section>
+    </div>
+    <div id="exercicio2" class="exercicio">
+        <section>
+            <h3>Exercicio 2!</h3>
+            <p>
+                Verificar o sexo e o ano de nascimento, calcular a idade e mostrar uma imagem correspondente ao sexo e a idade informada.
+            </p>
+        </section>
+        <section>
+            
+            <div >
+                <h3>Verificador de imagem</h3>
+                <p>
+                    Ano de nascimento:
+                    <input type="number" name="txtano" id="txtano" min="0">
+                </p>
+                <p>
+                    Sexo:
+                    <input type="radio" name="radsex" id="masc" checked>
+                    <label for="masc">Masculino</label>
+                    <input type="radio" name="radsex" id="fem" >
+                    <label for="fem">Feminino</label>
+                </p>
+                <p>
+                    <input type="button" value="Verificar" onclick="ex2()">
+                </p>
+                
+            </div>
+            <div id="res">
+                Preencha os dados acima para ver o resultado!
+                
+            </div>
+        </section>
+    </div>
     <footer>
         <p>&copy; Gabriel Schandler</p>
     </footer>
 
     <script src="script.js"></script>
+
+
 </body>
 </html>
