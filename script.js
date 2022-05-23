@@ -75,3 +75,37 @@ function ex2 (){
         res.innerHTML = `Detectamos ${genero} com ${idade} anos.`
         res.appendChild(img)
 }   
+
+function ex3 (){
+    let iniciotxt = document.querySelector('#inicio')
+    let fimtxt = document.querySelector('#fim')
+    let passotxt = document.querySelector('#passo')
+    let contador = document.querySelector('#contador')
+    let display = []
+    let inicio = Number(iniciotxt.value)
+        let fim = Number(fimtxt.value)
+        let passo = Number(passotxt.value)
+    
+    if(inicio == 0 || fim == 0 || passo == 0){
+        window.alert('Preencha todos os dados!')
+    } else if(passo > fim ){
+        window.alert('Passo não pode ser maior que o fim!')
+    }else if ( inicio > fim) {
+        window.alert('Inicio não pode ser maior que o fim!')
+    } else {
+        
+
+
+        console.log( inicio +' ')
+        contador.innerHTML = 'Contando:'
+        for (let c = inicio; c <= fim; c += passo){
+            contador.innerHTML += ` ${c};`
+            
+        }
+        
+
+    }
+
+    
+    
+}
