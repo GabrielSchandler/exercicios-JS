@@ -8,17 +8,17 @@ function carregar(){
     if (hora >= 0 && hora < 12){
         //Bom dia
         msg.innerHTML = `Bom dia! Agora são ${hora} horas.`
-        document.getElementById('exercicio1').style.backgroundColor = 'rgb(240, 158, 118, 100%)'
+        document.getElementById('exercicio1').style.backgroundColor = 'rgb(240, 158, 118, 50%)'
         img.src = 'images/exercicio1/dia.jpg'
     } else if (hora >= 12 && hora < 18){
         //Boa tarde
         msg.innerHTML = `Boa tarde! Agora são ${hora} horas.`
-        document.getElementById('exercicio1').style.backgroundColor = 'rgb(204, 109, 4, 100%)'
+        document.getElementById('exercicio1').style.backgroundColor = 'rgb(204, 109, 4, 50%)'
         img.src = 'images/exercicio1/tarde.jpg'
     } else {
         //Boa noite
         msg.innerHTML = `Boa noite! <br> Agora são ${hora} horas.`
-        document.getElementById('exercicio1').style.backgroundColor = 'rgb(63, 93, 93, 100%)'
+        document.getElementById('exercicio1').style.backgroundColor = 'rgb(63, 93, 93, 50%)'
         img.src = 'images/exercicio1/noite.png'
     }
 
@@ -108,4 +108,24 @@ function ex3 (){
 
     
     
+}
+
+function ex4(){
+    let tabuadatxt = document.querySelector('#tabuadatxt')
+    let tabuada = Number(tabuadatxt.value)
+    res_tabuada = document.querySelector('#res_tabuada')
+    if (tabuada == '') {
+        window.alert('Numero inválido. Tente outro!')
+    } else {
+        res_tabuada.innerHTML = ''
+        for(let i = 0; i <= 10; i++){
+            res_tabuada.setAttribute('size', '10')
+            console.log(i*tabuada)
+            
+            let option_tabuada = document.createElement('option')
+            option_tabuada.text = `${tabuada} x ${i} = ${tabuada*i}`
+            res_tabuada.appendChild(option_tabuada)
+
+        }
+    }
 }
