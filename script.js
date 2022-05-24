@@ -156,14 +156,17 @@ function ex05_2() {
     }else{
         let analise_final = document.querySelector('#analise_final')
         caixa.sort()
-        let maior_numero = caixa.length
-        maior_numero = 0
+        let maior_numero = caixa[0]
+        let menor_valor = caixa[0]
         let soma_caixa = 0
         let media_caixa = 0
         
         for(let contar in caixa){
             if(caixa[contar] >= maior_numero){
                 maior_numero = caixa[contar]
+            }
+            if(menor_valor >= caixa[contar] ){
+                menor_valor = caixa[contar]
             }
         }
         for(let cont in caixa){            
@@ -173,7 +176,7 @@ function ex05_2() {
 
         analise_final.innerHTML = `<p>Foram cadastrados:                ${caixa.length} numeros;</p>`
         analise_final.innerHTML += `<p>O maior valor informado foi:      ${maior_numero};</p>`
-        analise_final.innerHTML += `<p>O menor valor informado foi:      ${caixa[0]};    </p>`
+        analise_final.innerHTML += `<p>O menor valor informado foi:      ${menor_valor};    </p>`
         analise_final.innerHTML += `<p>Somando todos os valores, temos:  ${soma_caixa};  </p> `
         analise_final.innerHTML += `<p>A média dos valores é:            ${media_caixa.toFixed(2)}. </p>`
     }
