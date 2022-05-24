@@ -54,4 +54,13 @@ input[type="number"]{
 #exercicio4{
     background-color: rgba(165, 42, 42, 0.20);
 }
+#exercicio5 {
+    background-color: rgba(137, 43, 226, 0.296);
+}
 
+@media only screen and (max-width: 780px){
+    .exercicio{
+        padding: 30px;
+        display: block;
+    }
+}

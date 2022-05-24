@@ -129,3 +129,52 @@ function ex4(){
         }
     }
 }
+let caixa = []
+function ex5(){
+    let numerotxt = document.querySelector('#numerotxt')
+    let numero = Number(numerotxt.value)  
+    let caixa_resultado = document.querySelector('#caixa_resultado')
+
+
+    if (caixa.includes(numero) == true)  {
+        window.alert('Esse numero já foi adicionado, tente outro!')
+    }else if (numero > 100 || numero <= 0)  {      
+        window.alert('Numero invalido, digite um numero entre 1 á 100!')
+        }else  {
+            caixa.push(numero)
+            console.log(caixa.length)
+            caixa_resultado.setAttribute('size' ,`${caixa.length}`)
+            let option_analise = document.createElement('option')
+            option_analise.text = `Valor ${numero} adicionado!`
+            caixa_resultado.appendChild(option_analise)
+    }
+
+}
+function ex05_2() {
+    if (caixa[0] < 1){
+        window.alert('Erro na análise, adicione pelo menos um numero!')
+    }else{
+        let analise_final = document.querySelector('#analise_final')
+        caixa.sort()
+        let maior_numero = caixa.length
+        maior_numero = 0
+        let soma_caixa = 0
+        let media_caixa = 0
+        
+        for(let contar in caixa){
+            if(caixa[contar] >= maior_numero){
+                maior_numero = caixa[contar]
+            }
+        }
+        for(let cont in caixa){            
+            soma_caixa += caixa[cont]
+        }
+        media_caixa = (soma_caixa / caixa.length)        
+
+        analise_final.innerHTML = `<p>Foram cadastrados:                ${caixa.length} numeros;</p>`
+        analise_final.innerHTML += `<p>O maior valor informado foi:      ${maior_numero};</p>`
+        analise_final.innerHTML += `<p>O menor valor informado foi:      ${caixa[0]};    </p>`
+        analise_final.innerHTML += `<p>Somando todos os valores, temos:  ${soma_caixa};  </p> `
+        analise_final.innerHTML += `<p>A média dos valores é:            ${media_caixa.toFixed(2)}. </p>`
+    }
+}
